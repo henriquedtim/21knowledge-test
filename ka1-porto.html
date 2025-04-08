@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KA1 Courses in Porto - Erasmus+</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script type="module">
+        import { loadCourses } from './courseLoader.js';
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            loadCourses('Porto');
+        });
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="logo.png" alt="Logo">
+                <span>21Knowledge</span>
+            </div>
+            <button class="mobile-menu-btn" onclick="toggleMenu()">
+                <i data-lucide="menu"></i>
+            </button>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About Us</a>
+                <a href="ka1.html" class="nav-link">Erasmus+ KA1 Courses</a>
+                <a href="ka2.html" class="nav-link">Erasmus+ KA2 Courses</a>
+                <a href="register.html" class="nav-link">Registration</a>
+                <div class="dropdown">
+                    <button class="dropbtn" onclick="toggleDropdown()">
+                        More <i data-lucide="chevron-down"></i>
+                    </button>
+                    <div class="dropdown-content" id="dropdownContent">
+                        <a href="contact.html">Contact Us</a>
+                        <a href="photos.html">Photos</a>
+                        <a href="articles.html">Articles</a>
+                        <a href="useful-links.html">Useful Links</a>
+                        <a href="ka2.html">Videos</a>
+                        <a href="online-platforms.html">Online Platforms</a>
+                        <a href="livro-reclamacoes.html">Livro Reclamações / Complaint Book</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="page-content with-sidebar">
+        <aside class="sidebar">
+            <h3>KA1 Courses</h3>
+            <nav class="sidebar-nav">
+                <a href="ka1-madeira.html" class="sidebar-link">In Madeira</a>
+                <a href="ka1-porto.html" class="sidebar-link active">In Porto</a>
+                <a href="ka1-tailor.html" class="sidebar-link">Tailor Made Courses</a>
+            </nav>
+        </aside>
+
+        <section class="courses-section main-content">
+            <div class="courses-header">
+                <h1>KA1 Courses in Porto</h1>
+                <p>Professional Development in Porto</p>
+            </div>
+            
+            <div class="courses-grid">
+                <!-- Courses will be loaded dynamically here -->
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="social-media">
+                <a href="https://www.facebook.com/21knowledge.pt/" target="_blank" aria-label="Facebook">
+                    <i data-lucide="facebook"></i>
+                </a>
+                <a href="https://www.youtube.com/channel/UCdD8NACtOmRtbqAdGMooLBg" target="_blank" aria-label="YouTube">
+                    <i data-lucide="youtube"></i>
+                </a>
+            </div>
+    
+            <a href="contact.html" class="find-us-btn">
+                <i data-lucide="map-pin"></i> Find Us
+            </a>
+        </div>
+    </footer>
+
+
+
+    <script>
+        lucide.createIcons();
+        
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        function toggleDropdown() {
+            const dropdownContent = document.getElementById('dropdownContent');
+            dropdownContent.classList.toggle('show');
+        }
+
+        window.onclick = function(event) {
+            if (!event.target.matches('.dropbtn')) {
+                const dropdowns = document.getElementsByClassName('dropdown-content');
+                for (let dropdown of dropdowns) {
+                    if (dropdown.classList.contains('show')) {
+                        dropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>

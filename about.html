@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Erasmus+ Courses</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="logo.png" alt="Logo">
+                <span>21Knowledge</span>
+            </div>
+            <button class="mobile-menu-btn" onclick="toggleMenu()">
+                <i data-lucide="menu"></i>
+            </button>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About Us</a>
+                <a href="ka1.html" class="nav-link">Erasmus+ KA1 Courses</a>
+                <a href="ka2.html" class="nav-link">Erasmus+ KA2 Courses</a>
+                <a href="register.html" class="nav-link">Registration</a>
+                <div class="dropdown">
+                    <button class="dropbtn" onclick="toggleDropdown()">
+                        More <i data-lucide="chevron-down"></i>
+                    </button>
+                    <div class="dropdown-content" id="dropdownContent">
+                        <a href="contact.html">Contact Us</a>
+                        <a href="photos.html">Photos</a>
+                        <a href="articles.html">Articles</a>
+                        <a href="useful-links.html">Useful Links</a>
+                        <a href="ka2.html">Videos</a>
+                        <a href="online-platforms.html">Online Platforms</a>
+                        <a href="livro-reclamacoes.html">Livro Reclamações / Complaint Book</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="page-content">
+        <section class="about-section">
+            <div class="about-header">
+                <h1>About Us</h1>
+                <p>Leading the Way in International Education</p>
+            </div>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Team collaboration">
+                </div>
+                <div class="about-text">
+                    <h2>Our Mission</h2>
+                    <p>21Knowledge is a company created in 2016. Its skilled founder has worked for more than two decades in the field of education and has been involved in the Erasmus+ universe, namely as coordinator of an Erasmus+ KA1 project awarded in 2016 in the category of Inspirational Project. With the motto "Learning for the 21st Century", this is a company of the present, without the handicaps of the past, where we provide tools to prepare European teachers for a future that happens today. 21Knowledge's trainers are enthusiastic educational agents, namely teachers with a broad experience and actively involved in 21st Century Skills. 21Knowledge's mission is to work towards innovation having in mind a school of success.</p>
+                    
+            </div>
+        </section>
+    </main>
+
+    <div style="flex-grow: 1;"></div>
+
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="social-media">
+                <a href="https://www.facebook.com/21knowledge.pt/" target="_blank" aria-label="Facebook">
+                    <i data-lucide="facebook"></i>
+                </a>
+                <a href="https://www.youtube.com/channel/UCdD8NACtOmRtbqAdGMooLBg" target="_blank" aria-label="YouTube">
+                    <i data-lucide="youtube"></i>
+                </a>
+            </div>
+    
+            <a href="contact.html" class="find-us-btn">
+                <i data-lucide="map-pin"></i> Find Us
+            </a>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        function toggleDropdown() {
+            const dropdownContent = document.getElementById('dropdownContent');
+            dropdownContent.classList.toggle('show');
+        }
+
+        window.onclick = function(event) {
+            if (!event.target.matches('.dropbtn')) {
+                const dropdowns = document.getElementsByClassName('dropdown-content');
+                for (let dropdown of dropdowns) {
+                    if (dropdown.classList.contains('show')) {
+                        dropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>

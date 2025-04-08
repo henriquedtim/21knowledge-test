@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Photo Gallery - 21Knowledge</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <img src="logo.png" alt="Logo" />
+        <span>21Knowledge</span>
+      </div>
+      <button class="mobile-menu-btn" onclick="toggleMenu()">
+        <i data-lucide="menu"></i>
+      </button>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About Us</a>
+        <a href="ka1.html" class="nav-link">Erasmus+ KA1 Courses</a>
+        <a href="ka2.html" class="nav-link">Erasmus+ KA2 Courses</a>
+        <a href="register.html" class="nav-link">Registration</a>
+        <div class="dropdown">
+          <button class="dropbtn" onclick="toggleDropdown()">
+            More <i data-lucide="chevron-down"></i>
+          </button>
+          <div class="dropdown-content" id="dropdownContent">
+            <a href="contact.html">Contact Us</a>
+            <a href="photos.html">Photos</a>
+            <a href="articles.html">Articles</a>
+            <a href="useful-links.html">Useful Links</a>
+            <a href="ka2.html">Videos</a>
+            <a href="online-platforms.html">Online Platforms</a>
+            <a href="livro-reclamacoes.html">Livro Reclamações</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <h1 class="page-title">Photo Gallery</h1>
+
+    <div class="carousel">
+        <div class="arrow left">&#10094;</div>
+        <div class="arrow right">&#10095;</div>
+        <div class="image-counter">Image 1 of 70</div>
+        <div class="images-container"></div>
+      </div>     
+  </main>
+
+  <footer class="footer">
+    <a href="contact.html" class="find-us-btn">
+      <i data-lucide="map-pin"></i> Find Us
+    </a>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+
+    function toggleMenu() {
+      const navLinks = document.getElementById('navLinks');
+      navLinks.classList.toggle('active');
+    }
+
+    function toggleDropdown() {
+      const dropdownContent = document.getElementById('dropdownContent');
+      dropdownContent.classList.toggle('show');
+    }
+
+    window.onclick = function(event) {
+      if (!event.target.matches('.dropbtn')) {
+        const dropdowns = document.getElementsByClassName('dropdown-content');
+        for (let dropdown of dropdowns) {
+          if (dropdown.classList.contains('show')) {
+            dropdown.classList.remove('show');
+          }
+        }
+      }
+    }
+
+    // Carousel Logic
+    const imageCount = 70;
+  const imagesContainer = document.querySelector('.images-container');
+  const leftArrow = document.querySelector('.arrow.left');
+  const rightArrow = document.querySelector('.arrow.right');
+  const imageCounter = document.querySelector('.image-counter');
+  const images = [];
+
+  // Create the images dynamically
+  for (let i = 1; i <= imageCount; i++) {
+    const img = document.createElement('img');
+    img.src = `./images/photo${i}.jpg`;
+    if (i === 1) img.classList.add('active');
+    imagesContainer.appendChild(img);
+    images.push(img);
+  }
+
+  let current = 0;
+
+  function showImage(index) {
+    images.forEach((img, i) => {
+      img.classList.toggle('active', i === index);
+    });
+    updateCounter(index);
+  }
+
+  function updateCounter(index) {
+    imageCounter.textContent = `Image ${index + 1} of ${imageCount}`;
+  }
+
+  leftArrow.addEventListener('click', () => {
+    current = (current - 1 + images.length) % images.length;
+    showImage(current);
+  });
+
+  rightArrow.addEventListener('click', () => {
+    current = (current + 1) % images.length;
+    showImage(current);
+  });
+  </script>
+
+</body>
+</html>

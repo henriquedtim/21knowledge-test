@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration - Erasmus+ Courses</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i data-lucide="graduation-cap"></i>
+            </div>
+            <button class="mobile-menu-btn" onclick="toggleMenu()">
+                <i data-lucide="menu"></i>
+            </button>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About Us</a>
+                <a href="ka1.html" class="nav-link">Erasmus+ KA1 Courses</a>
+                <a href="ka2.html" class="nav-link">Erasmus+ KA2 Courses</a>
+                <a href="register.html" class="nav-link">Registration</a>
+                <div class="dropdown">
+                    <button class="dropbtn" onclick="toggleDropdown()">
+                        More <i data-lucide="chevron-down"></i>
+                    </button>
+                    <div class="dropdown-content" id="dropdownContent">
+                        <a href="contact.html">Contact Us</a>
+                        <a href="photos.html">Photos</a>
+                        <a href="articles.html">Articles</a>
+                        <a href="useful-links.html">Useful Links</a>
+                        <a href="videos.html">Videos</a>
+                        <a href="online-platforms.html">Online Platforms</a>
+                        <a href="livro-reclamacoes.html">Livro Reclamações / Complaint Book</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="page-content">
+        <section class="register-section">
+            <div class="register-header">
+                <h1>Course Registration</h1>
+                <p>Start Your Learning Journey Today</p>
+            </div>
+            
+            <div class="register-container">
+                <form class="register-form" onsubmit="event.preventDefault(); alert('Registration submitted successfully!');">
+                    <div class="form-group">
+                        <label for="fullname">Full Name</label>
+                        <input type="text" id="fullname" name="fullname" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="institution">Institution</label>
+                        <input type="text" id="institution" name="institution" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="course">Course Type</label>
+                        <select id="course" name="course" required>
+                            <option value="">Select a course</option>
+                            <option value="ka1-digital">KA1 - Digital Skills for Teachers</option>
+                            <option value="ka1-innovative">KA1 - Innovative Teaching Methods</option>
+                            <option value="ka1-leadership">KA1 - Educational Leadership</option>
+                            <option value="ka2-project">KA2 - Project Management</option>
+                            <option value="ka2-inclusion">KA2 - Inclusive Education</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Additional Information</label>
+                        <textarea id="message" name="message" rows="4"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-button">Submit Registration</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        lucide.createIcons();
+        
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        function toggleDropdown() {
+            const dropdownContent = document.getElementById('dropdownContent');
+            dropdownContent.classList.toggle('show');
+        }
+
+        window.onclick = function(event) {
+            if (!event.target.matches('.dropbtn')) {
+                const dropdowns = document.getElementsByClassName('dropdown-content');
+                for (let dropdown of dropdowns) {
+                    if (dropdown.classList.contains('show')) {
+                        dropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>

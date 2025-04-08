@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Erasmus+ Courses</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="logo.png" alt="Logo">
+                <span>21Knowledge</span>
+            </div>
+            <button class="mobile-menu-btn" onclick="toggleMenu()">
+                <i data-lucide="menu"></i>
+            </button>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About Us</a>
+                <a href="ka1.html" class="nav-link">Erasmus+ KA1 Courses</a>
+                <a href="ka2.html" class="nav-link">Erasmus+ KA2 Courses</a>
+                <a href="register.html" class="nav-link">Registration</a>
+                <div class="dropdown">
+                    <button class="dropbtn" onclick="toggleDropdown()">
+                        More <i data-lucide="chevron-down"></i>
+                    </button>
+                    <div class="dropdown-content" id="dropdownContent">
+                        <a href="contact.html">Contact Us</a>
+                        <a href="photos.html">Photos</a>
+                        <a href="articles.html">Articles</a>
+                        <a href="useful-links.html">Useful Links</a>
+                        <a href="ka2.html">Videos</a>
+                        <a href="online-platforms.html">Online Platforms</a>
+                        <a href="livro-reclamacoes.html">Livro Reclamações / Complaint Book</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <main>
+        <section class="hero-contact">
+            <div class="hero-contact-overlay"></div>
+            <div class="hero-contact-content">
+                <h1>Online Platforms</h1>
+            </div>
+        </section>
+
+        <section class="ka2-projects">
+            <div class="project-grid">
+                <div class="project-card">
+                    <div class="project-header">
+                        <i data-lucide="graduation-cap"></i>
+                        <h3>Teaching in a 21st Century School"</h3>
+                    </div>
+                    <div class="project-content">
+                        <p class="project-id">Madeira Island, 28.10.2019 / 02.11.2019</p>
+                        <a href="https://classroom.google.com/u/0/c/Mzg5NzY1OTUzODha" class="project-link" target="_blank">
+                            Visit Website<i data-lucide="external-link"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <i data-lucide="graduation-cap"></i>
+                        <h3>Teaching in a 21st Century School</h3>
+                    </div>
+                    <div class="project-content">
+                        <p class="project-id">Madeira Island, 11.02.2019 / 16.02.2019</p>
+                        <a href="https://classroom.google.com/u/0/c/MzA0NzU5NDg5NzZa" class="project-link" target="_blank">
+                            Visit Website <i data-lucide="external-link"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <i data-lucide="graduation-cap"></i>
+                        <h3>Teaching in a 21st Century School</h3>
+                    </div>
+                    <div class="project-content">
+                        <p class="project-id">Madeira Island, 05.02.2018 / 10.02.2018</p>
+                        <a href="https://classroom.google.com/u/0/c/MTA5MjQyNzU5NjFa" class="project-link" target="_blank">
+                            Visit Website <i data-lucide="external-link"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+
+    <div style="flex-grow: 1;"></div>
+
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="social-media">
+                <a href="https://www.facebook.com/21knowledge.pt/" target="_blank" aria-label="Facebook">
+                    <i data-lucide="facebook"></i>
+                </a>
+                <a href="https://www.youtube.com/channel/UCdD8NACtOmRtbqAdGMooLBg" target="_blank" aria-label="YouTube">
+                    <i data-lucide="youtube"></i>
+                </a>
+            </div>
+    
+            <a href="contact.html" class="find-us-btn">
+                <i data-lucide="map-pin"></i> Find Us
+            </a>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        function toggleDropdown() {
+            const dropdownContent = document.getElementById('dropdownContent');
+            dropdownContent.classList.toggle('show');
+        }
+
+        window.onclick = function(event) {
+            if (!event.target.matches('.dropbtn')) {
+                const dropdowns = document.getElementsByClassName('dropdown-content');
+                for (let dropdown of dropdowns) {
+                    if (dropdown.classList.contains('show')) {
+                        dropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>

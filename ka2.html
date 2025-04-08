@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Erasmus+ KA2 Projects - 21Knowledge</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="logo.png" alt="Logo">
+                <span>21Knowledge</span>
+            </div>
+            <button class="mobile-menu-btn" onclick="toggleMenu()">
+                <i data-lucide="menu"></i>
+            </button>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About Us</a>
+                <a href="ka1.html" class="nav-link">Erasmus+ KA1 Courses</a>
+                <a href="ka2.html" class="nav-link">Erasmus+ KA2 Courses</a>
+                <a href="register.html" class="nav-link">Registration</a>
+                <div class="dropdown">
+                    <button class="dropbtn" onclick="toggleDropdown()">
+                        More <i data-lucide="chevron-down"></i>
+                    </button>
+                    <div class="dropdown-content" id="dropdownContent">
+                        <a href="contact.html">Contact Us</a>
+                        <a href="photos.html">Photos</a>
+                        <a href="articles.html">Articles</a>
+                        <a href="useful-links.html">Useful Links</a>
+                        <a href="ka2.html">Videos</a>
+                        <a href="online-platforms.html">Online Platforms</a>
+                        <a href="livro-reclamacoes.html">Livro Reclamações / Complaint Book</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero-contact">
+            <div class="hero-contact-overlay"></div>
+            <div class="hero-contact-content">
+                <h1>Erasmus+ KA2 Projects</h1>
+                <p>Strategic Partnerships for Innovation and Exchange of Good Practices</p>
+            </div>
+        </section>
+
+        <section class="ka2-projects">
+            <div class="project-grid">
+                <div class="project-card">
+                    <div class="project-header">
+                        <i data-lucide="footprints"></i>
+                        <h3>FOOT PRINTS</h3>
+                    </div>
+                    <div class="project-content">
+                        <p class="project-id">Erasmus+ 2023-KA220-NW-23-36-165194</p>
+                        <a href="https://foottprintts.eu" class="project-link" target="_blank">
+                            Visit Project <i data-lucide="external-link"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <i data-lucide="check-circle"></i>
+                        <h3>VALID</h3>
+                    </div>
+                    <div class="project-content">
+                        <p class="project-id">Erasmus+ 2021-1-IE01-KA220-SCH-000034368</p>
+                        <a href="http://validproject.eu" class="project-link" target="_blank">
+                            Visit Project <i data-lucide="external-link"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <i data-lucide="steam"></i>
+                        <h3>STEAM-CT</h3>
+                    </div>
+                    <div class="project-content">
+                        <p class="project-id">Erasmus+ 2019-1-BE02-KA201-060222</p>
+                        <a href="https://www.steam-ct.org" class="project-link" target="_blank">
+                            Visit Project <i data-lucide="external-link"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <i data-lucide="graduation-cap"></i>
+                        <h3>CLIL in VET</h3>
+                    </div>
+                    <div class="project-content">
+                        <p class="project-id">Erasmus+ 2018-SK01-KA202-046321</p>
+                        <a href="http://clil-vet.eu" class="project-link" target="_blank">
+                            Visit Project <i data-lucide="external-link"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="video-gallery">
+            <h2>21Knowledge: "Learning for the 21st Century"</h2>
+            <div class="video-grid">
+                <div class="video-card">
+                    <iframe src="https://www.youtube.com/embed/Ax5cNlutAys" frameborder="0" allowfullscreen></iframe>
+                    <h3>What is 21st Century Learning?</h3>
+                </div>
+                <div class="video-card">
+                    <iframe src="https://www.youtube.com/embed/7KMM387HNQk" frameborder="0" allowfullscreen></iframe>
+                    <h3>Above and Beyond</h3>
+                </div>
+                <div class="video-card">
+                    <iframe src="https://www.youtube.com/embed/falHoOEUFz0" frameborder="0" allowfullscreen></iframe>
+                    <h3>Born to Learn</h3>
+                </div>
+                <div class="video-card">
+                    <iframe src="https://www.youtube.com/embed/xoSJ3_dZcm8" frameborder="0" allowfullscreen></iframe>
+                    <h3>The Future of Learning</h3>
+                </div>
+            </div>
+        </section>
+
+        <section class="video-gallery">
+            <h2>Erasmus+ has opportunities for you and your school!</h2>
+            <div class="video-grid">
+                <div class="video-card">
+                    <iframe src="https://www.youtube.com/embed/5yFlaGBm40o" frameborder="0" allowfullscreen></iframe>
+                    <h3>Erasmus Village</h3>
+                </div>
+                <div class="video-card">
+                    <iframe src="https://www.youtube.com/embed/UAEJYb_dY7c" frameborder="0" allowfullscreen></iframe>
+                    <h3>Erasmus+ New Programme</h3>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="social-media">
+                <a href="https://www.facebook.com/21knowledge.pt/" target="_blank" aria-label="Facebook">
+                    <i data-lucide="facebook"></i>
+                </a>
+                <a href="https://www.youtube.com/channel/UCdD8NACtOmRtbqAdGMooLBg" target="_blank" aria-label="YouTube">
+                    <i data-lucide="youtube"></i>
+                </a>
+            </div>
+    
+            <a href="contact.html" class="find-us-btn">
+                <i data-lucide="map-pin"></i> Find Us
+            </a>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        function toggleDropdown() {
+            const dropdownContent = document.getElementById('dropdownContent');
+            dropdownContent.classList.toggle('show');
+        }
+
+        window.onclick = function(event) {
+            if (!event.target.matches('.dropbtn')) {
+                const dropdowns = document.getElementsByClassName('dropdown-content');
+                for (let dropdown of dropdowns) {
+                    if (dropdown.classList.contains('show')) {
+                        dropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>

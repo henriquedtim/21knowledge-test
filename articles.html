@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Articles - Erasmus+ Courses</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="logo.png" alt="Logo">
+                <span>21Knowledge</span>
+            </div>
+            <button class="mobile-menu-btn" onclick="toggleMenu()">
+                <i data-lucide="menu"></i>
+            </button>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About Us</a>
+                <a href="ka1.html" class="nav-link">Erasmus+ KA1 Courses</a>
+                <a href="ka2.html" class="nav-link">Erasmus+ KA2 Courses</a>
+                <a href="register.html" class="nav-link">Registration</a>
+                <div class="dropdown">
+                    <button class="dropbtn" onclick="toggleDropdown()">
+                        More <i data-lucide="chevron-down"></i>
+                    </button>
+                    <div class="dropdown-content" id="dropdownContent">
+                        <a href="contact.html">Contact Us</a>
+                        <a href="photos.html">Photos</a>
+                        <a href="articles.html">Articles</a>
+                        <a href="useful-links.html">Useful Links</a>
+                        <a href="ka2.html">Videos</a>
+                        <a href="online-platforms.html">Online Platforms</a>
+                        <a href="livro-reclamacoes.html">Livro Reclamações / Complaint Book</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero-contact">
+            <div class="hero-contact-overlay"></div>
+            <div class="hero-contact-content">
+                <h1>Educational Articles</h1>
+                <p>Explore curated articles on international education, teaching practices, and the future of learning.</p>
+            </div>
+        </section>
+
+        <section class="articles-list">
+            <div class="article-card">
+                <i data-lucide="file-text"></i>
+                <div class="article-info">
+                    <h3><a href="https://www.oecd.org/pisa/pisa-2015-results-in-focus.pdf" target="_blank">PISA 2015 - Result in Focus</a></h3>
+                    <p>A brief overview of key results and insights from the 2015 PISA study.</p>
+                </div>
+            </div>
+
+            <div class="article-card">
+                <i data-lucide="file-text"></i>
+                <div class="article-info">
+                    <h3><a href="https://elpais.com/internacional/2016/12/08/actualidad/1481200752_446018.html?id_externo_rsoc=FB_CM" target="_blank">La Buena Escuela Portuguesa</a></h3>
+                    <p>Discover what makes the Portuguese school system a model for others to follow.</p>
+                </div>
+            </div>
+
+            <div class="article-card">
+                <i data-lucide="file-text"></i>
+                <div class="article-info">
+                    <h3><a href="https://www.economist.com/international/2016/12/10/what-the-world-can-learn-from-the-latest-pisa-test-results" target="_blank">What the world can learn from the latest PISA test results</a></h3>
+                    <p>Insights and reflections on global trends in education and student performance.</p>
+                </div>
+            </div>
+
+            <div class="article-card">
+                <i data-lucide="file-text"></i>
+                <div class="article-info">
+                    <h3><a href="pdfs/Guide-eTwinning-Erasmus__english_2017.pdf" target="_blank">How to Develop the European and International Dimension of your school</a></h3>
+                    <p>Practical strategies for integrating international perspectives in school education.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="social-media">
+                <a href="https://www.facebook.com/21knowledge.pt/" target="_blank" aria-label="Facebook">
+                    <i data-lucide="facebook"></i>
+                </a>
+                <a href="https://www.youtube.com/channel/UCdD8NACtOmRtbqAdGMooLBg" target="_blank" aria-label="YouTube">
+                    <i data-lucide="youtube"></i>
+                </a>
+            </div>
+    
+            <a href="contact.html" class="find-us-btn">
+                <i data-lucide="map-pin"></i> Find Us
+            </a>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        function toggleDropdown() {
+            const dropdownContent = document.getElementById('dropdownContent');
+            dropdownContent.classList.toggle('show');
+        }
+
+        window.onclick = function(event) {
+            if (!event.target.matches('.dropbtn')) {
+                const dropdowns = document.getElementsByClassName('dropdown-content');
+                for (let dropdown of dropdowns) {
+                    if (dropdown.classList.contains('show')) {
+                        dropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>
