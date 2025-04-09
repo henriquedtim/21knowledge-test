@@ -775,7 +775,11 @@ body {
     padding: 6rem 1rem;
     color: white;
     overflow: hidden;
-    max-height:20vh;
+    height: 20vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 .hero-contact-overlay {
@@ -988,65 +992,94 @@ body {
 }
 
 
-/* Photo galery styles */
-
+/* Photo Gallery Styles */
 .carousel {
     position: relative;
     width: 100%;
-    max-width: 800px;
+    max-width: 900px; /* Slightly wider for a more modern feel */
     height: 500px;
     margin: 40px auto;
     overflow: hidden;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    border-radius: 15px; /* Smooth rounded corners */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Deeper shadow for elegance */
     background: #fff;
     transition: opacity 0.5s ease, transform 0.5s ease;
-  }
+}
 
-  .carousel .images-container {
+/* Container for the images */
+.carousel .images-container {
     width: 100%;
     height: 100%;
-  }
-  .carousel img {
+    position: relative;
+}
+
+/* Image styling */
+.carousel img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: none;
     opacity: 0;
-    transition: opacity 0.5s ease, transform 0.5s ease;
-  }
-  
-  .carousel img.active {
+    transition: opacity 1s ease, transform 0.7s ease;
+    border-radius: 15px; /* Rounded corners for images */
+}
+
+/* Active image with zoom and fade effect */
+.carousel img.active {
     display: block;
     opacity: 1;
-    transform: scale(1.05); /* Slight zoom-in effect */
-  }
+    transform: scale(1.1); /* Slight zoom-in effect */
+}
 
-  .arrow {
+/* Arrow styles */
+.arrow {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0, 0, 0, 0.5);
     color: white;
-    font-size: 2rem;
-    padding: 10px;
+    font-size: 2.5rem; /* Ensure size fits well */
+    padding: 12px; /* Slightly larger padding for balance */
     cursor: pointer;
     z-index: 10;
     user-select: none;
-  }
-  .arrow.left {
-    left: 10px;
-  }
-  .arrow.right {
-    right: 10px;
-  }
+    border-radius: 50%; /* Keep circular shape */
+    width: 50px; /* Fixed width */
+    height: 50px; /* Fixed height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
 
-  .page-title {
+/* Hover effect */
+.arrow:hover {
+    background-color: rgba(0, 0, 0, 0.7); /* Darker on hover */
+    transform: scale(1.1); /* Slight scaling on hover */
+}
+
+/* Left arrow positioning */
+.arrow.left {
+    left: 20px;
+}
+
+/* Right arrow positioning */
+.arrow.right {
+    right: 20px;
+}
+
+
+/* Page title styling */
+.page-title {
     text-align: center;
     margin-top: 60px;
-  }
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333; /* Darker text for contrast */
+}
 
-  .image-counter {
+/* Image counter styling */
+.image-counter {
     position: absolute;
     top: 10px;
     left: 50%;
@@ -1058,7 +1091,18 @@ body {
     font-size: 16px;
     font-weight: bold;
     z-index: 20;
-  }
+    text-transform: uppercase;
+}
+
+.carousel img:hover {
+    transform: scale(1.05); /* Zoom effect on hover */
+    transition: transform 0.3s ease;
+}
+
+.carousel img {
+    transition: opacity 1s ease-in-out;
+}
+
   
 /* Articles Section */
 .articles-list {

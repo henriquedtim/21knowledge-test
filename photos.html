@@ -51,13 +51,38 @@
         <div class="image-counter">Image 1 of 70</div>
         <div class="images-container"></div>
       </div>     
+
+ <!-- Modal for Fullscreen Image -->
+ <div id="imageModal" class="modal" onclick="closeModal()">
+  <span class="close" onclick="closeModal()">×</span>
+  <img id="modalImage" class="modal-content">
+  <div id="caption"></div>
+</div>
+
   </main>
 
+  <div style="flex-grow: 1;"></div>
+
+
   <footer class="footer">
-    <a href="contact.html" class="find-us-btn">
-      <i data-lucide="map-pin"></i> Find Us
-    </a>
-  </footer>
+    <div class="footer-content">
+        <div class="social-media">
+            <a href="https://www.facebook.com/21knowledge.pt/" target="_blank" aria-label="Facebook">
+                <i data-lucide="facebook"></i>
+            </a>
+            <a href="https://www.youtube.com/channel/UCdD8NACtOmRtbqAdGMooLBg" target="_blank" aria-label="YouTube">
+                <i data-lucide="youtube"></i>
+            </a>
+        </div>
+
+        <a href="contact.html" class="find-us-btn">
+            <i data-lucide="map-pin"></i> Find Us
+        </a>
+    </div>
+</footer>
+
+
+
 
   <script>
     lucide.createIcons();
@@ -122,6 +147,7 @@
     current = (current + 1) % images.length;
     showImage(current);
   });
+  
   </script>
 
 </body>
