@@ -1,36 +1,14 @@
 export const courses = [
     {
-        "id": "course7A",
-        "title": "Course 7A",
-        "description": "Outdoor Education and Adventure Learning in the Context of 21st Century Skills",
-        "fullTitle": "Course 7A - Outdoor Education and Adventure Learning in the Context of 21st Century Skills",
-        "date": "23.09.2024 / 28.09.2024",
-        "location": "Madeira",
-        "duration": "6 days",
-        "image": "https://images.unsplash.com/photo-1517048676732-d65bc937f952?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2970&q=80",
-        "pdf": "pdfs/course7A.pdf"
-    },
-    {
         "id": "course7B",
         "title": "Course 7B",
         "description": "Outdoor Education in the Context of 21st Century Skills",
         "fullTitle": "Course 7B - Outdoor Education in the Context of 21st Century Skills",
         "date": "25.11.2024 / 30.11.2024",
         "location": "Madeira",
-        "duration": "6 days",
-        "image": "https://images.unsplash.com/photo-1551632811-561732d1e306?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2970&q=80",
+        "duration": "5 days",
+        "image": "https://epale.ec.europa.eu/sites/default/files/inline-images/outdoor%20CARD.png",
         "pdf": "pdfs/course7B.pdf"
-    },
-    {
-        "id": "course9",
-        "title": "Course 9",
-        "description": "Education for @ll in a Digit@l Society",
-        "fullTitle": "Course 9 - Education for @ll in a Digit@l Society",
-        "date": "By order (Last sessions: 29.01.2024 / 03.02.2024)",
-        "location": "Madeira",
-        "duration": "6 days",
-        "image": "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2970&q=80",
-        "pdf": "pdfs/course9.pdf"
     },
     {
         "id": "course10",
@@ -38,9 +16,130 @@ export const courses = [
         "description": "Outdoor Learning & 21st Century Skills",
         "fullTitle": "Course 10 - Outdoor Learning & 21st Century Skills",
         "date": "By order",
+        "location": "Madeira",
+        "duration": "3 days",
+        "image": "https://images.stockcake.com/public/8/b/3/8b321ae3-4cf2-43ef-b62d-a62faac2d00d_large/outdoor-study-group-stockcake.jpg",
+        "pdf": "pdfs/course10.pdf"
+    },
+    {
+        "id": "course9",
+        "title": "Course 9",
+        "description": "Education for @ll in a Digit@l Society",
+        "fullTitle": "Course 9 - Education for @ll in a Digit@l Society",
+        "date": "By order",
+        "location": "Madeira",
+        "duration": "5 days",
+        "image": "https://miro.medium.com/v2/resize:fit:900/1*NQuEqdqK3EmmkPcvyYl43g.jpeg",
+        "pdf": "pdfs/course9.pdf"
+    },
+    {
+        "id": "course7A",
+        "title": "Course 7A",
+        "description": "Outdoor Education and Adventure Learning in the Context of 21st Century Skills",
+        "fullTitle": "Course 7A - Outdoor Education and Adventure Learning in the Context of 21st Century Skills",
+        "date": "23.09.2024 / 28.09.2024",
+        "location": "Madeira",
+        "duration": "6 days",
+        "image": "https://portugalnaturetrails.com/wp-content/uploads/2021/03/Madeira-Island-Adventure-01-1500x630.jpg",
+        "pdf": "pdfs/course7A.pdf"
+    },
+    {
+        "id": "course1",
+        "title": "Course 1",
+        "description": "Robotics and Augmented Reality in 21st School",
+        "fullTitle": "Course 1 - Robotics and Augmented Reality in 21st School",
+        "date": "22.07.2024 / 27.07.2024 or 04.11.2024 / 09.11.2024",
+        "location": "Madeira",
+        "duration": "6 days",
+        "image": "https://images.unsplash.com/photo-1640455100299-60ccc3dbfb74?q=80&w=1931&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "pdf": "pdfs/course1.pdf"
+    },
+    {
+        "id": "course2",
+        "title": "Course 2",
+        "description": "Teaching in a 21st Century School",
+        "fullTitle": "Course 2 - Teaching in a 21st Century School",
+        "date": "22.07.2024 / 27.07.2024 or 04.11.2024 / 09.11.2024",
+        "location": "Madeira",
+        "duration": "5 days",
+        "image": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "pdf": "pdfs/course1.pdf"
+    },
+    {
+        "id": "course5",
+        "title": "Course 5",
+        "description": "School for ALL",
+        "fullTitle": "Course 5 - School for ALL",
+        "date": "22.07.2024 / 26.07.2024",
+        "location": "Madeira",
+        "duration": "4 days",
+        "image": "https://plus.unsplash.com/premium_photo-1681248156475-f95f078846d5?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "pdf": "pdfs/course5.pdf"
+    },
+    {
+        "id": "course6",
+        "title": "Course 6",
+        "description": "CLIL in VET",
+        "fullTitle": "Course 6 - CLIL in VET",
+        "date": "By order",
+        "location": "Madeira",
+        "duration": "6 days",
+        "image": "images/clilvet.png",
+        "pdf": "pdfs/course6.pdf"
+    },
+    {
+        "id": "course7",
+        "title": "Course 7",
+        "description": "Outdoor Education in the Context of 21st Century Skills",
+        "fullTitle": "Course 7 - Outdoor Education in the Context of 21st Century Skills",
+        "date": "By order",
+        "location": "Madeira",
+        "duration": "6 days",
+        "image": "https://epale.ec.europa.eu/sites/default/files/inline-images/outdoor%20CARD.png",
+        "pdf": "pdfs/course7.pdf"
+    },
+    {
+        "id": "course8",
+        "title": "Course 8",
+        "description": "English Language in a 21st Century School",
+        "fullTitle": "Course 8 - English Language in a 21st Century School",
+        "date": "By order",
+        "location": "Madeira",
+        "duration": "6 days",
+        "image": "https://plus.unsplash.com/premium_photo-1663047291494-b29cb4f0df9d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "pdf": "pdfs/course8.pdf"
+    },
+    {
+        "id": "course11",
+        "title": "Course 11",
+        "description": "Executive Functions & Self-regulated Learning in the Classroom",
+        "fullTitle": "Course 11 - Executive Functions & Self-regulated Learning in the Classroom",
+        "date": "27.01.2025 /01.02.2025",
         "location": "Porto",
         "duration": "6 days",
-        "image": "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2970&q=80",
-        "pdf": "pdfs/course10.pdf"
-    }
+        "image": "https://plus.unsplash.com/premium_photo-1698526216226-95d8aec9db8e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "pdf": "pdfs/course11.pdf"
+    },
+    {
+        "id": "course3",
+        "title": "Course 3",
+        "description": "School for ALL",
+        "fullTitle": "Course 3 - School for ALL",
+        "date": "22.07.2024 / 26.07.2024",
+        "location": "Porto",
+        "duration": "5 days",
+        "image": "https://plus.unsplash.com/premium_photo-1681248156475-f95f078846d5?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "pdf": "pdfs/course3.pdf"
+    },
+    {
+        "id": "course4",
+        "title": "Course 4",
+        "description": "Internationalization of Schools in the Context of 21st Century Skills",
+        "fullTitle": "Course 4 - Internationalization of Schools in the Context of 21st Century Skills",
+        "date": "22.07.2024 / 26.07.2024",
+        "location": "Porto",
+        "duration": "5 days",
+        "image": "https://images.unsplash.com/photo-1744181526018-9a6efb9fdb3f?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "pdf": "pdfs/course4.pdf"
+    },
 ];

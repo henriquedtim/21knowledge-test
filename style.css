@@ -75,6 +75,14 @@ body {
     background-color: #243b53;
 }
 
+.nav-id {
+    margin-left: 20px;
+    font-weight: bold;
+    font-size: 18px;
+    color: #ffffff; /* or your preferred color */
+    white-space: nowrap;
+}
+
 /* Dropdown styles */
 .dropdown {
     position: relative;
