@@ -13,8 +13,13 @@ body {
     display: flex;
     min-height:100vh;
     flex-direction: column;
+    height: 100%;
+    margin: 0;
 }
 
+main {
+    flex:1;
+}
 /* Navbar styles */
 .navbar {
     background-color: #102a43;
@@ -263,6 +268,7 @@ body {
     max-width: 1280px;
     margin: 0 auto;
     padding: 2rem 1rem;
+    flex:1;
 }
 
 /* Location grid styles */
@@ -383,7 +389,7 @@ body {
 }
 
 .about-header h1 {
-    font-size: clamp(1.5rem, 5vw, 2.5rem); /* Adjust these values as needed */
+    font-size: clamp(1.5rem, 4vw, 4rem); /* Adjust these values as needed */
     color: #102a43;
     margin-bottom: 0.5rem;
 }
@@ -403,6 +409,7 @@ body {
 .about-text h2 {
     color: #102a43;
     margin-bottom: 1rem;
+    font-size: clamp(1rem, 1.5vw, 1.5rem);
 }
 
 .about-text p {
@@ -488,7 +495,7 @@ body {
 .course-content h3 {
     color: #102a43;
     margin-bottom: 0.5rem;
-    font-size: 1.25rm;
+    font-size: 1.25rem;
 }
 
 .course-details {
@@ -1259,4 +1266,139 @@ body {
     .course-image img {
         height: 150px;
     }
+}
+
+
+@media (min-width: 1440px) {
+  .nav-container,
+  .hero-content,
+  .features,
+  .page-content,
+  .about-content,
+  .stats-grid,
+  .courses-grid,
+  .video-grid,
+  .project-grid,
+  .with-sidebar {
+    max-width: var(--max-content-width);
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .hero h1 {
+    font-size: 4.5rem;
+  }
+
+  .hero p {
+    font-size: 1.5rem;
+  }
+
+  .feature-text h3 {
+    font-size: 1.25rem;
+  }
+
+  .about-header h1,
+  .courses-header h1,
+  .register-header h1 {
+    font-size: 3rem;
+  }
+
+  .sidebar-nav {
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .sidebar-link {
+    font-size: 1rem;
+    padding: 1rem;
+    border-radius: 0.375rem;
+    background-color: var(--bg-light);
+    transition: all 0.3s ease;
+  }
+
+  .sidebar-link:hover {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+  }
+
+  /* Ajuste para sidebar não fixo */
+  .sidebar {
+    position: relative;
+    top: auto;
+  }
+
+   .carousel {
+    max-width: 1100px;
+    height: 600px;
+    margin: 50px auto;
+  }
+
+  .arrow {
+    font-size: 3rem;
+    width: 60px;
+    height: 60px;
+    padding: 14px;
+  }
+
+  .page-title {
+    font-size: 2.5rem;
+  }
+}
+
+/* Ultra-wide screen support */
+@media (min-width: 2560px) {
+  :root {
+    --max-content-width: 1920px;
+  }
+
+  .hero h1 {
+    font-size: 5rem;
+  }
+
+  .hero p {
+    font-size: 1.75rem;
+  }
+
+  .feature-text h3 {
+    font-size: 1.5rem;
+  }
+
+  .carousel {
+    max-width: 1400px;  /* Aumenta a largura máxima */
+    height: 750px;      /* Aumenta a altura para aproveitar espaço */
+    margin: 60px auto;  /* Mais margem para respirar */
+    border-radius: 20px; /* Bordas um pouco maiores */
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.25); /* Sombra mais profunda */
+  }
+
+  .carousel img.active {
+    transform: scale(1.15); /* Zoom um pouco maior na imagem ativa */
+  }
+
+  .arrow {
+    font-size: 3.5rem;    /* Setas maiores */
+    width: 65px;
+    height: 65px;
+    padding: 16px;
+  }
+
+  .arrow.left {
+    left: 40px;
+  }
+
+  .arrow.right {
+    right: 40px;
+  }
+
+  .image-counter {
+    font-size: 20px;
+    padding: 12px 18px;
+    border-radius: 7px;
+  }
+
+  .page-title {
+    font-size: 3rem;
+    margin-top: 80px;
+    color: #222;
+  }
 }
