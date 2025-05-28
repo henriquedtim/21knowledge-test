@@ -22,15 +22,27 @@ main {
 }
 /* Navbar styles */
 .navbar {
-    background-color: #102a43;
+    /*background: linear-gradient(to right, #256D85, #3a7c59);*/
+    background-color: #A0522D; /* Cor inicial */
     color: white;
-    padding: 1rem 0;
+    padding: 0.5rem 0;
     position: sticky;
     top: 0;
     z-index: 1000;
     box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2); /* Added subtle shadow */
     transition: box-shadow 0.3s ease; /* Smooth transition for shadow effect */
+
+    animation: navbarColorCycle 15s ease-in-out infinite;
+
 }
+
+@keyframes navbarColorCycle {
+    0%   { background-color: #A0522D; } /* Cor 1 (marrom) */
+    33%  { background-color: #3B6E44; } /* Cor 2 (verde) */
+    66%  { background-color: #1E6F9F; } /* Cor 3 (azul) */
+    100% { background-color: #A0522D; } /* Volta ao início */
+}
+
 
 .nav-container {
     max-width: 1280px;
@@ -48,15 +60,14 @@ main {
 }
 
 .nav-logo img {
-    width: 40px;
-    height: 40px;
-    margin-right: 10px;
+    width: 60px;
+    height: 60px;
 }
 
 .nav-logo span {
-    font-size: 18px;
+    font-size: 26px;
     font-weight: bold;
-    margin-left: 40px;
+    margin-left: 10px;
     color: white;
   }
 
@@ -87,6 +98,14 @@ main {
     color: #ffffff; /* or your preferred color */
     white-space: nowrap;
 }
+
+/* Aba da Madeira*/ 
+
+
+
+
+
+
 
 /* Dropdown styles */
 .dropdown {
@@ -148,14 +167,12 @@ main {
     padding: 0.5rem;
 }
 
-/* Hero section styles */
 .hero {
     position: relative;
     padding: 6rem 1rem;
     overflow: hidden;
-    min-height: 100vh;
-    background-color: #102a43;
-    color:white;
+    background-color: #ffffff;
+    color: #000000;
 }
 
 .hero-overlay {
@@ -164,10 +181,11 @@ main {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('https://images.unsplash.com/photo-1524178232363-1fb2b075b655?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2970&q=80');
     background-size: cover;
     background-position: center;
-    opacity: 0.2;
+    opacity: 0.4;
+    transition: background-image 0.5s ease-in-out;
+    z-index: 0;
 }
 
 .hero-content {
@@ -193,11 +211,12 @@ main {
     font-weight: 800;
     line-height: 1.2;
     margin-bottom: 1.5rem;
+    color: #1e2a38;
 }
 
 .hero p {
     font-size: 1.25rem;
-    color: #d9e2ec;
+    color: #1e2a38;
     max-width: 48rem;
     margin: 0 auto 2rem;
 }
@@ -219,49 +238,91 @@ main {
 
 /* Features section */
 .features {
-    max-width: 1280px;
-    margin: 3rem auto 0;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    padding: 0 1rem;
-    opacity: 80%;
-    transform: translateY(20px);
-    animation: fadeInUpCards 1s ease-out forwards;
-    animation-delay: 0.5s;
+  max-width: 1280px;
+  margin: 4rem auto ;
+  padding: 4rem 1rem; /* add padding to visualize spacing */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  padding: 0 1rem;
+}
+
+.features-section {
+  margin: 4rem 0; /* 4rem margin top and bottom */
 }
 
 .feature-card {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    background-color: #243b53;
-    padding: 1.5rem;
-    border-radius: 0.5rem;
+  background-color: #fdf3dc;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: transform 0.3s ease;
+
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  gap:1rem;
 }
 
-@keyframes fadeInUpCards {
-    to {
-      transform: translateY(0);
-    }
-  }
+.feature-card:hover {
+  transform: translateY(-5px);
+}
 
-.feature-card i {
-    width: 32px;
-    height: 32px;
-    color: white;
+.icon-circle {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra leve */
+}
+
+/* Ícone SVG */
+.icon-circle.emoji {
+    font-size: 24px;
+    line-height: 1;
+}
+
+.icon-circle.brown {
+    background-color: #A0522D;
+}
+
+.icon-circle.blue {
+    background-color: #1E6F9F;
+}
+
+.icon-circle.green {
+    background-color: #3B6E44;
 }
 
 .feature-text h3 {
-    color: white;
-    font-size: 1.125rem;
-    margin-bottom: 0.25rem;
+  color: #102a43;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
 }
 
 .feature-text p {
-    color: #d9e2ec;
-    font-size: 0.875rem;
+  color: #334e68;
+  font-size: 1.1rem;
+  line-height: 1.5;
 }
+
+.feature-text ul {
+  padding-left: 1.2rem; /* indent the list */
+  margin: 1rem 0;
+  list-style-type: disc; /* bullet points */
+}
+
+.feature-text li {
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+
 
 /* Page content styles */
 .page-content {
@@ -414,6 +475,7 @@ main {
 
 .about-text p {
     margin-bottom: 2rem;
+    color: #2e2e2e;
 }
 
 .stats-grid {
@@ -733,8 +795,9 @@ main {
 
 .footer {
     background-color: #af890d;
-    padding: 1rem 2rem;
+    padding: 1.5rem 2rem;
     color: white;
+    box-sizing: border-box; /* makes padding included in width */
 }
 
 .footer-content {
@@ -814,11 +877,50 @@ main {
     text-decoration: none;
 }
 
+.nav-logo {
+    display:flex;
+    align-items: center;
+    background-image: none;
+}
+
+.nav-logo img {
+    width: 60px;
+    height: 60px;
+    margin-left: 40px;
+
+}
+
+.nav-logo span {
+    font-size: 26px;
+    font-weight: bold;
+    margin-left: 20px;
+    color: white;
+  }
+
+/* Barra da Madeira*/
+.barra-colorida {
+  display: flex;
+  height: 8px; /* Super fina */
+  width: 100%;
+}
+
+.barra-colorida div {
+  flex: 1;
+  height: 100%;
+}
+
+.vermelho { background-color: #b32324; }
+.amarelo  { background-color: #f8d944; }
+.azul     { background-color: #232d54; }
+.verde    { background-color: #008166; }
+.branco   { background-color: #F5F1E6; }
+
+
 /* Contact page styles */
 
 .hero-contact {
     position: relative;
-    background-color: #102a43;
+    background-color: #ffffff;
     padding: 6rem 1rem;
     color: white;
     overflow: hidden;
@@ -838,7 +940,7 @@ main {
     background-image: url('https://images.unsplash.com/photo-1524178232363-1fb2b075b655?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2970&q=80');
     background-size: cover;
     background-position: center;
-    opacity: 0.2;
+    opacity: 0.6;
 }
 
 .hero-contact-content {
