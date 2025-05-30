@@ -5,7 +5,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const images = [
     'images/madeira.png',
     'images/porto.png',
-    'images/photo24.jpg',
     'images/photo43.jpg',
     'images/flagsue.jpg',
     'images/ueportugal.jpg'
@@ -55,6 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Opcional: tenta selecionar os elementos exclusivos do index, se existirem
   const explorer = document.querySelector('.explore-section');
   const heroTitle = document.querySelector('.hero h1');
+  const heroSquare = document.querySelector('.hero p');
 
   let current = 0;
   let next = 1;
@@ -85,6 +85,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (heroTitle) {
       heroTitle.style.setProperty('--main-color', colorHex);
+    }
+
+    if (heroSquare) {
+      heroSquare.style.setProperty('--main-color', colorHex);
     }
 
     requestAnimationFrame(animate);
