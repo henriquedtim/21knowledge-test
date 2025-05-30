@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,6 +8,7 @@
   <link rel="stylesheet" href="style.css" />
   <script src="https://unpkg.com/lucide@latest"></script>
 </head>
+
 <body>
 
   <nav class="navbar">
@@ -41,48 +43,74 @@
 
         <span class="nav-id">ID E10181271</span>
 
+      </div>
     </div>
-</div>
-</nav>
+  </nav>
+
+  <div class="barra-colorida">
+    <div class="vermelho"></div>
+    <div class="amarelo"></div>
+    <div class="azul"></div>
+    <div class="verde"></div>
+    <div class="branco"></div>
+    <div class="vermelho"></div>
+    <div class="amarelo"></div>
+    <div class="azul"></div>
+    <div class="verde"></div>
+    <div class="branco"></div>
+  </div>
 
   <main>
     <h1 class="page-title">Photo Gallery</h1>
 
     <div class="carousel">
-        <div class="arrow left">&#10094;</div>
-        <div class="arrow right">&#10095;</div>
-        <div class="image-counter">Image 1 of 70</div>
-        <div class="images-container"></div>
-      </div>     
+      <div class="arrow left">&#10094;</div>
+      <div class="arrow right">&#10095;</div>
+      <div class="image-counter">Image 1 of 70</div>
+      <div class="images-container"></div>
+    </div>
 
- <!-- Modal for Fullscreen Image -->
- <div id="imageModal" class="modal" onclick="closeModal()">
-  <span class="close" onclick="closeModal()">×</span>
-  <img id="modalImage" class="modal-content">
-  <div id="caption"></div>
-</div>
+    <!-- Modal for Fullscreen Image -->
+    <div id="imageModal" class="modal" onclick="closeModal()">
+      <span class="close" onclick="closeModal()">×</span>
+      <img id="modalImage" class="modal-content">
+      <div id="caption"></div>
+    </div>
 
   </main>
 
   <div style="flex-grow: 1;"></div>
 
+  <div class="barra-colorida">
+    <div class="vermelho"></div>
+    <div class="amarelo"></div>
+    <div class="azul"></div>
+    <div class="verde"></div>
+    <div class="branco"></div>
+    <div class="vermelho"></div>
+    <div class="amarelo"></div>
+    <div class="azul"></div>
+    <div class="verde"></div>
+    <div class="branco"></div>
+  </div>
+
 
   <footer class="footer">
     <div class="footer-content">
-        <div class="social-media">
-            <a href="https://www.facebook.com/21knowledge.pt/" target="_blank" aria-label="Facebook">
-                <i data-lucide="facebook"></i>
-            </a>
-            <a href="https://www.youtube.com/channel/UCdD8NACtOmRtbqAdGMooLBg" target="_blank" aria-label="YouTube">
-                <i data-lucide="youtube"></i>
-            </a>
-        </div>
-
-        <a href="contact.html" class="find-us-btn">
-            <i data-lucide="map-pin"></i> Find Us
+      <div class="social-media">
+        <a href="https://www.facebook.com/21knowledge.pt/" target="_blank" aria-label="Facebook">
+          <i data-lucide="facebook"></i>
         </a>
+        <a href="https://www.youtube.com/channel/UCdD8NACtOmRtbqAdGMooLBg" target="_blank" aria-label="YouTube">
+          <i data-lucide="youtube"></i>
+        </a>
+      </div>
+
+      <a href="contact.html" class="find-us-btn">
+        <i data-lucide="map-pin"></i> Find Us
+      </a>
     </div>
-</footer>
+  </footer>
 
 
 
@@ -100,7 +128,7 @@
       dropdownContent.classList.toggle('show');
     }
 
-    window.onclick = function(event) {
+    window.onclick = function (event) {
       if (!event.target.matches('.dropbtn')) {
         const dropdowns = document.getElementsByClassName('dropdown-content');
         for (let dropdown of dropdowns) {
@@ -113,45 +141,65 @@
 
     // Carousel Logic
     const imageCount = 70;
-  const imagesContainer = document.querySelector('.images-container');
-  const leftArrow = document.querySelector('.arrow.left');
-  const rightArrow = document.querySelector('.arrow.right');
-  const imageCounter = document.querySelector('.image-counter');
-  const images = [];
+    const imagesContainer = document.querySelector('.images-container');
+    const leftArrow = document.querySelector('.arrow.left');
+    const rightArrow = document.querySelector('.arrow.right');
+    const imageCounter = document.querySelector('.image-counter');
+    const images = [];
 
-  // Create the images dynamically
-  for (let i = 1; i <= imageCount; i++) {
-    const img = document.createElement('img');
-    img.src = `./images/photo${i}.jpg`;
-    if (i === 1) img.classList.add('active');
-    imagesContainer.appendChild(img);
-    images.push(img);
-  }
+    let isHoveringArrow = false; // 👈 Novo controle de hover
 
-  let current = 0;
 
-  function showImage(index) {
-    images.forEach((img, i) => {
-      img.classList.toggle('active', i === index);
+    // Create the images dynamically
+    for (let i = 1; i <= imageCount; i++) {
+      const img = document.createElement('img');
+      img.src = `./images/photo${i}.jpg`;
+      if (i === 1) img.classList.add('active');
+      imagesContainer.appendChild(img);
+      images.push(img);
+    }
+
+    let current = 0;
+
+    function showImage(index) {
+      images.forEach((img, i) => {
+        img.classList.toggle('active', i === index);
+      });
+      updateCounter(index);
+    }
+
+    function updateCounter(index) {
+      imageCounter.textContent = `Image ${index + 1} of ${imageCount}`;
+    }
+
+    leftArrow.addEventListener('click', () => {
+      current = (current - 1 + images.length) % images.length;
+      showImage(current);
     });
-    updateCounter(index);
-  }
 
-  function updateCounter(index) {
-    imageCounter.textContent = `Image ${index + 1} of ${imageCount}`;
-  }
+    rightArrow.addEventListener('click', () => {
+      current = (current + 1) % images.length;
+      showImage(current);
+    });
 
-  leftArrow.addEventListener('click', () => {
-    current = (current - 1 + images.length) % images.length;
-    showImage(current);
-  });
+    // Detectar se o mouse está sobre as setas
+    [leftArrow, rightArrow].forEach(arrow => {
+      arrow.addEventListener('mouseenter', () => isHoveringArrow = true);
+      arrow.addEventListener('mouseleave', () => isHoveringArrow = false);
+    });
 
-  rightArrow.addEventListener('click', () => {
-    current = (current + 1) % images.length;
-    showImage(current);
-  });
-  
+    // Auto avanço a cada 2 segundos se o mouse NÃO estiver sobre as setas
+    setInterval(() => {
+      if (!isHoveringArrow) {
+        current = (current + 1) % images.length;
+        showImage(current);
+      }
+    }, 3000);
+
   </script>
 
+  <script src="functions.js"></script>
+
 </body>
+
 </html>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
+
 <body>
     <nav class="navbar">
         <div class="nav-container">
@@ -44,6 +46,19 @@
         </div>
     </nav>
 
+    <div class="barra-colorida">
+        <div class="vermelho"></div>
+        <div class="amarelo"></div>
+        <div class="azul"></div>
+        <div class="verde"></div>
+        <div class="branco"></div>
+        <div class="vermelho"></div>
+        <div class="amarelo"></div>
+        <div class="azul"></div>
+        <div class="verde"></div>
+        <div class="branco"></div>
+    </div>
+
     <main class="page-content">
         <section class="about-section">
             <div class="about-header">
@@ -55,15 +70,33 @@
                 </div>
                 <div class="about-text">
                     <p>Para reclamações diretamente à empresa, pode usar o email info@21Knowledge.pt </p>
-                    <p>Se pretender efetuar enviar uma Reclamação à Entidade Reguladora deve utilizar o <a href="https://www.livroreclamacoes.pt" target="_blank" style="color: #007bff; text-decoration: none;">Livro de Reclamações Online</a> no endereço.</p>
-                    <p>For complaints directly to the company, you can use the email info@21Knowledge.pt</p> 
-                    <p>If you wish to submit a Complaint to the Regulatory Authority you must use the <a href="https://www.livroreclamacoes.pt" target="_blank" style="color: #007bff; text-decoration: none;">Online Complaint Book</a> at the address.</p>
-                    
-            </div>
+                    <p>Se pretender efetuar enviar uma Reclamação à Entidade Reguladora deve utilizar o <a
+                            href="https://www.livroreclamacoes.pt" target="_blank"
+                            style="color: #007bff; text-decoration: none;">Livro de Reclamações Online</a> no endereço.
+                    </p>
+                    <p>For complaints directly to the company, you can use the email info@21Knowledge.pt</p>
+                    <p>If you wish to submit a Complaint to the Regulatory Authority you must use the <a
+                            href="https://www.livroreclamacoes.pt" target="_blank"
+                            style="color: #007bff; text-decoration: none;">Online Complaint Book</a> at the address.</p>
+
+                </div>
         </section>
     </main>
 
     <div style="flex-grow: 1;"></div>
+
+    <div class="barra-colorida">
+        <div class="vermelho"></div>
+        <div class="amarelo"></div>
+        <div class="azul"></div>
+        <div class="verde"></div>
+        <div class="branco"></div>
+        <div class="vermelho"></div>
+        <div class="amarelo"></div>
+        <div class="azul"></div>
+        <div class="verde"></div>
+        <div class="branco"></div>
+    </div>
 
 
     <footer class="footer">
@@ -76,7 +109,7 @@
                     <i data-lucide="youtube"></i>
                 </a>
             </div>
-    
+
             <a href="contact.html" class="find-us-btn">
                 <i data-lucide="map-pin"></i> Find Us
             </a>
@@ -85,7 +118,7 @@
 
     <script>
         lucide.createIcons();
-        
+
         function toggleMenu() {
             const navLinks = document.getElementById('navLinks');
             navLinks.classList.toggle('active');
@@ -96,7 +129,7 @@
             dropdownContent.classList.toggle('show');
         }
 
-        window.onclick = function(event) {
+        window.onclick = function (event) {
             if (!event.target.matches('.dropbtn')) {
                 const dropdowns = document.getElementsByClassName('dropdown-content');
                 for (let dropdown of dropdowns) {
@@ -107,5 +140,8 @@
             }
         }
     </script>
+
+    <script src="functions.js"></script>
 </body>
+
 </html>
