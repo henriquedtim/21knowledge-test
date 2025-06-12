@@ -37,29 +37,6 @@ main {
     /* Smooth transition for shadow effect */
 }
 
-@keyframes navbarColorCycle {
-    0% {
-        background-color: #A0522D;
-    }
-
-    /* Cor 1 (marrom) */
-    33% {
-        background-color: #3B6E44;
-    }
-
-    /* Cor 2 (verde) */
-    66% {
-        background-color: #1E6F9F;
-    }
-
-    /* Cor 3 (azul) */
-    100% {
-        background-color: #A0522D;
-    }
-
-    /* Volta ao início */
-}
-
 
 .nav-container {
     max-width: 1280px;
@@ -106,7 +83,8 @@ main {
 }
 
 .nav-link:hover {
-    background-color: #243b53;
+    background-color: var(--main-color);
+    filter: brightness(0.7);
 }
 
 .nav-id {
@@ -116,6 +94,7 @@ main {
     color: #ffffff;
     /* or your preferred color */
     white-space: nowrap;
+    font-family: 'Poppins', sans-serif;
 }
 
 /* RESPONSIVO LOGO + TITULO: telas pequenas */
@@ -132,9 +111,6 @@ main {
         margin-left: 0;
     }
 }
-
-
-
 
 /* Dropdown styles */
 .dropdown {
@@ -156,7 +132,8 @@ main {
 }
 
 .dropbtn:hover {
-    background-color: #243b53;
+    background-color: var(--main-color);
+    filter: brightness(0.7);
 }
 
 .dropdown-content {
@@ -299,16 +276,16 @@ main {
     .nav-link {
         padding: 0.75rem 1rem;
         /* links maiores */
-        font-size: 1.6rem;
+        font-size: 1.2rem;
         /* texto um pouco maior */
     }
 
     .nav-id {
-        font-size: 1.6rem;
+        font-size: 1.2rem;
     }
 
     .dropbtn {
-        font-size: 1.6rem;
+        font-size: 1.2rem;
     }
 }
 
@@ -375,7 +352,6 @@ main {
 
 .features-section {
     margin: 2rem 0;
-    /* 4rem margin top and bottom */
 }
 
 .feature-card {
@@ -561,7 +537,8 @@ main {
 }
 
 .sidebar-link.active {
-    background-color: #102a43;
+    --main-color: #A0522D;
+    background-color: var(--main-color);
     color: white;
 }
 
@@ -1077,7 +1054,7 @@ main {
 
 .hero-contact {
     position: relative;
-    background-color: #ffffff;
+    background-color: var(--main-color);
     padding: 6rem 1rem;
     color: white;
     overflow: hidden;
@@ -1400,16 +1377,35 @@ main {
 }
 
 .project-card {
-    background: white;
-    border-radius: 12px;
-    padding: 1.5rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: #fdf3dc;
+  border-radius: 18px;
+  padding: 2rem 1.8rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  cursor: pointer;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.project-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(0, 123, 255, 0.05), rgba(0, 0, 0, 0.03));
+  z-index: -1;
+  transition: opacity 0.3s ease;
+  opacity: 0;
 }
 
 .project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+}
+
+.project-card:hover::before {
+  opacity: 1;
 }
 
 .project-header {
