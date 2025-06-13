@@ -15,9 +15,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (overlay) {
     setInterval(() => {
-      index = (index + 1) % images.length;
-      overlay.style.backgroundImage = `url('${images[index]}')`;
-    }, 2000);
+  index = (index + 1) % images.length;
+
+  // Fade overlay down to 0.1 opacity instead of 0 (still visible but very faint)
+  overlay.style.transition = "opacity 0.4s ease-in-out";
+  setTimeout(() => {
+    overlay.style.backgroundImage = `url('${images[index]}')`;
+    // Fade opacity back to fully visible
+    overlay.style.opacity = 0.6;
+  }, 600);
+}, 4000);
   }
 
   // 2. Animação da navbar (deve funcionar em todas as páginas que tenham .navbar)
@@ -71,11 +78,11 @@ function rgbToHex(r, g, b) {
 
   // Opcional: tenta selecionar os elementos exclusivos do index, se existirem
   const explorer = document.querySelector(".explore-section");
-  const heroTitle = document.querySelector(".hero h1");
-  const heroSquare = document.querySelector(".hero p");
+  const heroTitle = document.querySelector(".hero");
   const sidebaractive = document.querySelector(".sidebar-link.active");
   const heroOverlay = document.querySelector(".hero-contact");
   const navHover = document.querySelector(".nav-link:hover");
+  const articles = document.querySelector(".articles-list");
 
   let current = 0;
   let next = 1;
@@ -112,10 +119,6 @@ function rgbToHex(r, g, b) {
       heroTitle.style.setProperty("--main-color", colorHex);
     }
 
-    if (heroSquare) {
-      heroSquare.style.setProperty("--main-color", colorHex);
-    }
-
     if (sidebaractive) {
       sidebaractive.style.setProperty("--main-color", colorHex);
     }
@@ -126,6 +129,10 @@ function rgbToHex(r, g, b) {
 
     if (navHover) {
      navHover.style.setProperty("--main-color", colorHex);
+    }
+
+    if (articles) {
+     articles.style.setProperty("--main-color", colorHex);
     }
 
     requestAnimationFrame(animate);
