@@ -49,7 +49,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Start slideshow
   setInterval(changeBackground, fadeDuration + displayDuration);
-})
 
   // 2. Animação da navbar (deve funcionar em todas as páginas que tenham .navbar)
   const colors = ["#A0522D", "#3B6E44", "#1E6F9F"];
