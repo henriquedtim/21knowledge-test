@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   console.log("functions.js carregado");
 
-  // 1. Animação do slideshow (apenas se houver .hero-overlay)
   const images = [
     "images/madeira.png",
     "images/porto.png",
@@ -10,22 +9,47 @@ document.addEventListener("DOMContentLoaded", function () {
     "images/ueportugal.jpg",
   ];
 
-  let index = 0;
   const overlay = document.querySelector(".hero-overlay");
+  if (!overlay) return;
 
-  if (overlay) {
-    setInterval(() => {
-  index = (index + 1) % images.length;
+  // Preload images
+  images.forEach((src) => {
+    const img = new Image();
+    img.src = src;
+  });
 
-  // Fade overlay down to 0.1 opacity instead of 0 (still visible but very faint)
-  overlay.style.transition = "opacity 0.4s ease-in-out";
-  setTimeout(() => {
-    overlay.style.backgroundImage = `url('${images[index]}')`;
-    // Fade opacity back to fully visible
-    overlay.style.opacity = 0.6;
-  }, 600);
-}, 4000);
+  let index = 0;
+  const fadeDuration = 800; // in ms
+  const displayDuration = 3000; // in ms
+
+  function fadeOut(element, callback) {
+    element.style.transition = `opacity ${fadeDuration}ms ease-in-out`;
+    element.style.opacity = 0.1;
+    setTimeout(callback, fadeDuration);
   }
+
+  function fadeIn(element) {
+    element.style.transition = `opacity ${fadeDuration}ms ease-in-out`;
+    element.style.opacity = 0.6;
+  }
+
+  function changeBackground() {
+    fadeOut(overlay, () => {
+      index = (index + 1) % images.length;
+      overlay.style.backgroundImage = `url('${images[index]}')`;
+      fadeIn(overlay);
+    });
+  }
+
+  // Initialize
+  overlay.style.backgroundImage = `url('${images[index]}')`;
+  overlay.style.opacity = 0.6;
+  overlay.style.backgroundSize = "cover";
+  overlay.style.backgroundPosition = "center";
+
+  // Start slideshow
+  setInterval(changeBackground, fadeDuration + displayDuration);
+})
 
   // 2. Animação da navbar (deve funcionar em todas as páginas que tenham .navbar)
   const colors = ["#A0522D", "#3B6E44", "#1E6F9F"];
