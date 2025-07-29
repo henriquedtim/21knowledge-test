@@ -11,7 +11,22 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet" />
     <link rel="icon" href="logo.png" type="image/png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" rel="stylesheet">
+
+
+
 </head>
+
+<script> type = "application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type:": "EducationalOrganization",
+    "name:" : "21Knowledge",
+    "url": "https://21knowledge.com"
+} 
+</script>
 
 <body>
     <nav class="navbar">
@@ -28,7 +43,7 @@
                 <a href="about.html" class="nav-link">About Us</a>
                 <a href="ka1.html" class="nav-link">Erasmus+ KA1 Courses</a>
                 <a href="ka2.html" class="nav-link">Erasmus+ KA2 Projects</a>
-                <a href="register.html" class="nav-link">Registration</a>
+                <a href="register.html" class="nav-link">Apply Now</a>
                 <div class="dropdown">
                     <button class="dropbtn" onclick="toggleDropdown()">
                         More <i data-lucide="chevron-down"></i>
@@ -62,10 +77,28 @@
         <div class="verde"></div>
         <div class="branco"></div>
     </div>
+<div class="social-icons">
+    <!-- Facebook Icon -->
+    <div class="icon">
+        <a href="https://www.facebook.com/21knowledge.pt/" target="_blank" rel="noopener noreferrer">
+      <svg viewBox="-5 0 20 20" xmlns="http://www.w3.org/2000/svg" fill="#ffffff" stroke="#ffffff">
+        <path d="M335.821282,7259 L335.821282,7250 L338.553693,7250 L339,7246 L335.821282,7246 L335.821282,7244.052 C335.821282,7243.022 335.847593,7242 337.286884,7242 L338.744689,7242 L338.744689,7239.14 C338.744689,7239.097 337.492497,7239 336.225687,7239 C333.580004,7239 331.923407,7240.657 331.923407,7243.7 L331.923407,7246 L329,7246 L329,7250 L331.923407,7250 L331.923407,7259 L335.821282,7259 Z" transform="translate(-329 -7239)"></path>
+      </svg>
+      </a>
+    </div>
 
+    <!-- YouTube Icon -->
+    <div class="icon">
+         <a href="https://www.youtube.com/channel/UCdD8NACtOmRtbqAdGMooLBg" target="_blank" rel="noopener noreferrer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29 29 0 001 11.75a29 29 0 00.46 5.33A2.78 2.78 0 003.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 001.94-2 29 29 0 00.46-5.25 29 29 0 00-.46-5.33z"></path>
+        <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+      </svg>
+      </a>
+    </div>
+  </div>
 
     <main>
-
         <section class="hero">
             <div class="hero-overlay"></div>
             <div class="hero-content">
@@ -159,6 +192,11 @@
             <a href="contact.html" class="find-us-btn">
                 <i data-lucide="map-pin"></i> Find Us
             </a>
+
+            <a href="livro-reclamacoes.html" class="livro-reclamacoes">
+                 <img src="images/Logo_Livro_Reclamacoes.png" alt="Livro de Reclamações" />
+            </a>
+
         </div>
     </footer>
 
@@ -187,6 +225,22 @@
             }
         }
     </script>
+
+    <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const h1 = document.querySelector('.hero-content h1');
+    const text = h1.textContent.trim();
+    h1.textContent = ''; // Clear original content
+
+    // Wrap each character in a span and apply staggered delay
+    text.split('').forEach((char, index) => {
+      const span = document.createElement('span');
+      span.textContent = char;
+      span.style.animationDelay = `${index * 0.1}s`;
+      h1.appendChild(span);
+    });
+  });
+</script>
 
     <script src="functions.js"></script>
 

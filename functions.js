@@ -1,55 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   console.log("functions.js carregado");
 
-  const images = [
-    "images/madeira.png",
-    "images/porto.png",
-    "images/photo43.jpg",
-    "images/flagsue.jpg",
-    "images/ueportugal.jpg",
-  ];
-
-  const overlay = document.querySelector(".hero-overlay");
-  if (!overlay) return;
-
-  // Preload images
-  images.forEach((src) => {
-    const img = new Image();
-    img.src = src;
-  });
-
-  let index = 0;
-  const fadeDuration = 800; // in ms
-  const displayDuration = 3000; // in ms
-
-  function fadeOut(element, callback) {
-    element.style.transition = `opacity ${fadeDuration}ms ease-in-out`;
-    element.style.opacity = 0.1;
-    setTimeout(callback, fadeDuration);
-  }
-
-  function fadeIn(element) {
-    element.style.transition = `opacity ${fadeDuration}ms ease-in-out`;
-    element.style.opacity = 0.6;
-  }
-
-  function changeBackground() {
-    fadeOut(overlay, () => {
-      index = (index + 1) % images.length;
-      overlay.style.backgroundImage = `url('${images[index]}')`;
-      fadeIn(overlay);
-    });
-  }
-
-  // Initialize
-  overlay.style.backgroundImage = `url('${images[index]}')`;
-  overlay.style.opacity = 0.6;
-  overlay.style.backgroundSize = "cover";
-  overlay.style.backgroundPosition = "center";
-
-  // Start slideshow
-  setInterval(changeBackground, fadeDuration + displayDuration);
-
   // 2. Animação da navbar (deve funcionar em todas as páginas que tenham .navbar)
   const colors = ["#A0522D", "#3B6E44", "#1E6F9F"];
 
@@ -106,6 +57,8 @@ function rgbToHex(r, g, b) {
   const heroOverlay = document.querySelector(".hero-contact");
   const navHover = document.querySelector(".nav-link:hover");
   const articles = document.querySelector(".articles-list");
+  const icons = document.querySelector(".social-icons");
+
 
   let current = 0;
   let next = 1;
@@ -156,6 +109,10 @@ function rgbToHex(r, g, b) {
 
     if (articles) {
      articles.style.setProperty("--main-color", colorHex);
+    }
+
+    if(icons) {
+      icons.style.setProperty("--main-color", colorHex);
     }
 
     requestAnimationFrame(animate);

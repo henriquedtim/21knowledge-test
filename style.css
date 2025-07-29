@@ -85,6 +85,7 @@ main {
 .nav-link:hover {
     background-color: var(--main-color);
     filter: brightness(0.7);
+    text-decoration: underline white;
 }
 
 .nav-id {
@@ -202,19 +203,21 @@ main {
 .hero-overlay {
     position: absolute;
     inset: 0;
-    /* shorthand for top:0; left:0; right:0; bottom:0 */
     background-size: cover;
     background-position: center;
     background-blend-mode: multiply;
-    /* darken → multiply is richer */
-    background-color: rgba(255, 255, 255, 0.85);
-    /* softer white overlay */
     opacity: 0.8;
-    /* slightly less transparent */
-    transition: background-image 0.5s ease-in-out;
+    animation: imgPrincipal 40s linear infinite;
     z-index: 0;
     filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.05));
-    /* subtle shadow for depth */
+}
+
+@keyframes imgPrincipal {
+    0% {background-image: url('images/madeira.png');}
+    25% {background-image: url('images/porto.png');}
+    50% {background-image: url('images/photo43.jpg');}
+    75% {background-image: url('images/flagsue.jpg');}
+    100% {background-image: url('images/ueportugal.jpg');}
 }
 
 .hero-content {
@@ -232,7 +235,22 @@ main {
     animation: fadeInUp 1s ease-out forwards;
     animation-delay: 0.5s;
     max-width: 720px;
-    /* limit width for readability */
+    animation: fadeSlideIn 1s forwards;
+}
+
+.hero-content h1 span {
+  display: inline-block;
+  animation: wave 1.5s infinite ease-in-out;
+}
+
+/* Wave keyframe */
+@keyframes wave {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 @keyframes fadeInUp {
@@ -319,11 +337,14 @@ main {
 
 .hero h1 {
     font-size: 7rem !important;
-    font-family: 'Playfair Display', serif !important;
+    font-family: 'Merriweather', serif !important;
+    font-optical-sizing: auto;
     line-height: 1.2;
     color: var(--main-color);
     text-shadow:
         2px 2px 6px rgba(255, 255, 255, 0.8);
+    animation-delay: 0.2s;
+
 }
 
 .hero h2 {
@@ -333,6 +354,8 @@ main {
     color: var(--main-color);
     text-shadow: 2px 2px 6px rgba(255, 255, 255, 0.7);
     font-family: 'Playfair Display', serif !important;
+      animation-delay: 0.4s;
+
 
 }
 
@@ -345,7 +368,17 @@ main {
     padding: 1rem;
     border-radius: 4px;
     opacity: 0.8;
+      animation-delay: 0.6s;
 
+
+}
+
+/* Keyframes */
+@keyframes fadeSlideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .hero-button {
@@ -363,6 +396,8 @@ main {
     text-align: center;
     cursor: pointer;
     border: 2px solid var(--main-color);
+      animation-delay: 0.8s;
+
 
 }
 
@@ -372,6 +407,38 @@ main {
     color: #fff;
     box-shadow: 0 6px 20px rgba(160, 82, 45, 0.4);
     outline: none;
+}
+
+.social-icons {
+    position: fixed;
+    top: 50%;
+    right: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 9999;
+}
+
+.icon {
+    background-color: var(--main-color);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.icon:hover {
+    transform: scale(1.1);
+}
+
+.icon svg {
+    width: 24px;
+    height: 24px;
 }
 
 .cta-button {
@@ -904,7 +971,7 @@ main {
 
 
 
-/* Registration form styles */
+/* Apply Now form styles */
 .register-section {
     background-color: white;
     border-radius: 0.5rem;
@@ -1059,11 +1126,26 @@ main {
     font-weight: 500;
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
     font-size: 1.1rem;
     text-decoration: none;
+    gap: 0.5rem;
+    margin:auto;
 }
 
+/* Livro de reclamações alinhado à direita */
+.livro-reclamacoes {
+  position: absolute;
+  right: 40px; /* distância da borda direita */
+  display: flex;
+  align-items: center;
+}
+
+/* Ajusta tamanho da imagem para ficar legal no footer */
+.livro-reclamacoes img {
+  height: 50px;
+  width: auto;
+  display: block;
+}
 
 /* Barra da Madeira*/
 .barra-colorida {
@@ -1329,6 +1411,18 @@ main {
 
     .explore-image {
         height: 160px;
+    }
+
+    .social-icons {
+        display: none;
+    }
+
+    .livro-reclamacoes img{
+        height: 40px;
+    }
+
+    .find-us-btn {
+        padding-right: 120px;
     }
 }
 
